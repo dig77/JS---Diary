@@ -31,13 +31,9 @@
      font-weight: 700;
  }
 
- #entryForm {
-     width: clamp(340px, 40vw, 50vw);
- }
-
  .entry-textbox {
      background-color: #fff;
-     width: 100%;
+     width: clamp(340px, 40vw, 50vw);
      height: 20em;
      padding: 1em 1.5em;
      border: unset;
@@ -79,7 +75,7 @@
 
  section {
      display: none;
-     width: clamp(340px, 65vw, 90vw);
+     width: clamp(340px, 70vw, 90vw);
      background-color: #eaeaf4;
      border-radius: 5px;
      border: 1px solid #e1e1e8;
@@ -101,8 +97,9 @@
      color: #fff;
      padding: .7em 1.5em;
      border: unset;
-     font-weight: 600;
+     font-weight: 500;
      font-size: .95rem;
+     letter-spacing: 1px;
      cursor: pointer;
      border-radius: 30px;
  }
