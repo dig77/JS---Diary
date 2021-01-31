@@ -69,23 +69,19 @@ function deleteDisplayButton(evt) {
     // get current display entry bt
     targetbutton = evt.target;
 
-    // call delete function
-    deleteEntry(evt)
+    // call delete entry function
+    deleteEntry(evt);
 }
 
 function deleteEntry(evt) {
-    // console.log(targetbutton)
     // get current delete button
     const deleteBt = evt.target;
 
     if (deleteBt.classList[0] === 'delete-btn') {
-        // find the display entry bt
-        // const target = document.querySelector('.display-entry-button');
         // get parent from delete bt
         const entry = deleteBt.parentElement;
         entry.remove();
         targetbutton.remove();
-        // target.remove();
         // pass the display entry bt
         deleteLocalEntries(targetbutton);
     }
@@ -179,14 +175,13 @@ function deleteLocalEntries(entry) {
         entries = JSON.parse(localStorage.getItem('entries'));
     }
 
-    //  console.log(entry.innerText);
-
+    // get text form display entry button and find array index
     const index = entries.findIndex(x => x.number == entry.innerText);
 
-    //  console.log(index);
-
+    // remove stored entries value from found index
     entries.splice(index, 1);
 
+    // get the stores entries
     localStorage.setItem('entries', JSON.stringify(entries));
 
 }
