@@ -87,7 +87,6 @@ function deleteEntry(evt) {
     }
 }
 
-
 function saveLocalEntries(entry) {
     // check if already have entries
     let entries;
@@ -159,7 +158,6 @@ function getLocalEntries() {
 
     })
 }
-
 
 function deleteLocalEntries(entry) {
     // check if already have entries
