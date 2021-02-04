@@ -95,8 +95,7 @@ function saveLocalEntries(entry) {
         // if not create array
         entries = [];
     } else {
-        // show entries section
-        entriesSection.classList.add('is-visible');
+
         //  get existing entries
         entries = JSON.parse(localStorage.getItem('entries'));
     }
@@ -116,13 +115,21 @@ function getLocalEntries() {
     if (localStorage.getItem('entries') === null) {
         // if not create array
         entries = [];
+        
     } else {
-        // show entries section
-        entriesSection.classList.add('is-visible');
+
         //  get existing entries
         entries = JSON.parse(localStorage.getItem('entries'));
+
+        // show entries section
+        entriesSection.classList.add('is-visible');
+
+        if(entries.length === 0) {
+            entriesSection.classList.toggle('is-visible');
+        }
     }
 
+    
     entries.forEach(function (entry) {
 
         // create entry
@@ -167,8 +174,6 @@ function deleteLocalEntries(entry) {
         // if not create array
         entries = [];
     } else {
-        // show entries section
-        entriesSection.classList.add('is-visible');
         //  get existing entries
         entries = JSON.parse(localStorage.getItem('entries'));
     }
@@ -181,5 +186,9 @@ function deleteLocalEntries(entry) {
 
     // get the stores entries
     localStorage.setItem('entries', JSON.stringify(entries));
+
+    if(entries.length === 0) {
+        entriesSection.classList.toggle('is-visible');
+    }
 
 }
